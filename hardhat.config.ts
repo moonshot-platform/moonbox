@@ -4,10 +4,12 @@ import { HardhatUserConfig } from "hardhat/types";
 import "@nomiclabs/hardhat-waffle";
 import "hardhat-typechain";
 import "hardhat-abi-exporter";
+import "@nomiclabs/hardhat-etherscan";
+import "hardhat-gas-reporter";
 
 const OWNER_PRIVATE_KEY = process.env.OWNER_PRIVATE_KEY || "";
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
-const ROPSTEN_PRIVATE_KEY = process.env.ROPSTEN_PRIVATE_KEY;
+const ROPSTEN_PRIVATE_KEY = process.env.ROPSTEN_PRIVATE_KEY || "";
 // Etherscan or BSCscan API key
 const BLOCK_EXPLORER_API_KEY = process.env.BLOCK_EXPLORER_API_KEY || "";
 
@@ -16,7 +18,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.7.4",
+        version: "0.7.6",
         settings: {},
       },
     ],
@@ -47,3 +49,5 @@ const config: HardhatUserConfig = {
     flat: false,
   },
 };
+
+export default config;
