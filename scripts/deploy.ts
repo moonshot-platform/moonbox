@@ -1,14 +1,16 @@
-import { ethers } from "hardhat";
-import { Contract, utils, providers, constants, BigNumber } from ethers;
+import { ethers, network } from "hardhat";
 
 const main = async () => {
-  const Moonbox = await ethers.getContractFactory("Moonbox");
-  const moonbox = await Moonbox.deploy();
+  console.log("Deploying contracts to", network.name);
+
   const MoonboxNFT = await ethers.getContractFactory("MoonboxNFT");
   const moonboxNFT = await MoonboxNFT.deploy();
 
-  await moonbox.deployed();
+  console.log(
+    `MoonboxNFT deployed at ${moonboxNFT.address} with tx ${moonboxNFT.deployTransaction.hash}`
+  );
   await moonboxNFT.deployed();
+  console.log("Deployment finished!");
 };
 
 main()

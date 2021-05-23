@@ -27,5 +27,10 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.4.0"
+  },
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts"
   }
 }
