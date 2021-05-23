@@ -24,7 +24,11 @@ const config: HardhatUserConfig = {
     ],
   },
   networks: {
-    hardhat: {},
+    hardhat: {
+      // forking: {
+      //   url: "https://bsc-dataseed.binance.org",
+      // },
+    },
     ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_API_KEY}`,
       accounts: [ROPSTEN_PRIVATE_KEY],
@@ -44,7 +48,7 @@ const config: HardhatUserConfig = {
     apiKey: BLOCK_EXPLORER_API_KEY,
   },
   abiExporter: {
-    path: './data/abi',
+    path: "./data/abi",
     clear: true,
     flat: false,
   },

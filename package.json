@@ -30,6 +30,8 @@
   },
   "scripts": {
     "test": "hardhat test",
+    "node": "hardhat node",
+    "verify": "hardhat verify",
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.ts"
   }
