@@ -1,6 +1,9 @@
 node_modules
-
-#Hardhat files
 cache
-artifacts
-hardhat.config.local.js
+build
+typechain/
+artifacts/
+data/
+coverage*
+.env
+hardhat.config.local.ts
